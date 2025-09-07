@@ -257,9 +257,12 @@ document.addEventListener('DOMContentLoaded', () => {
             'objective-4-desc': 'To develop a safe and accessible mechanism to encourage reporting of misconduct, protect whistleblowers, and maintain confidentiality.',
             'objective-5-title': 'Law Enforcement',
             'objective-5-desc': 'To assist in law enforcement in collaboration with law enforcement agencies and the Commission to Investigate Allegations of Bribery or Corruption.',
-            'cta-title': 'Learn About Functions and Responsibilities',
-            'cta-desc': 'Get detailed information about the functions and responsibilities of the Internal Affairs Unit.',
+                        'cta-title': 'Learn About Functions and Responsibilities',
+            'cta-desc': 'Explore the detailed functions and responsibilities of our Internal Affairs Unit.',
             'cta-button': 'View Functions',
+            'functions-cta-title': 'Learn About Our Team',
+            'functions-cta-desc': 'Get to know the composition and key officials of the Internal Affairs Unit.',
+            'functions-cta-button': 'View Composition',
 
             // Functions Page
             'functions-title': 'Responsibilities and Functions of the Internal Affairs Unit',
@@ -380,9 +383,12 @@ document.addEventListener('DOMContentLoaded', () => {
             'objective-4-desc': 'විෂමාචාර වාර්තා කිරීම දිරි ගැන්වීම, තොරතුරු හෙළි කරන්නන් ආරක්ෂා කිරීම සහ රහස්‍යභාවය පවත්වා ගැනීම සඳහා ආරක්ෂිත සහ ප්‍රවේශ විය හැකි ක්‍රම වේදයක් සකස් කිරීම.',
             'objective-5-title': 'නීති ක්‍රියාත්මක කිරීම',
             'objective-5-desc': 'නීතිය ක්‍රියාත්මක කරන ආයතන සහ අල්ලස් හෝ දූෂණ චෝදනා විමර්ශන කොමිෂන් සභාව සමඟ සහයෝගයෙන් නීති බලාත්මක කිරීමට සහය වීම.',
-            'cta-title': 'කාර්යයන් සහ වගකීම් දැන ගන්න',
-            'cta-desc': 'අභ්‍යන්තර කටයුතු ඒකකයේ විස්තරාත්මක කාර්යයන් සහ වගකීම් පිළිබඳ වැඩි විස්තර ලබා ගන්න.',
+                        'cta-title': 'කාර්යයන් සහ වගකීම් දැන ගන්න',
+            'cta-desc': 'අපගේ අභ්‍යන්තර කටයුතු ඒකකයේ සවිස්තරාත්මක කාර්යයන් සහ වගකීම් ගවේෂණය කරන්න.',
             'cta-button': 'කාර්යයන් බලන්න',
+            'functions-cta-title': 'අපගේ කණ්ඩායම දැන ගන්න',
+            'functions-cta-desc': 'අභ්‍යන්තර කටයුතු ඒකකයේ සංයුතිය සහ ප්‍රධාන නිලධාරීන් පිළිබඳ තොරතුරු ලබා ගන්න.',
+            'functions-cta-button': 'සංයුතිය බලන්න',
 
             // Functions Page
             'functions-title': 'අභ්‍යන්තර කටයුතු ඒකකයෙහි වගකීම සහ කාර්යයන්',
