@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Sinhala:wght@400;700&display=swap');
+
 body {
     font-family: 'Noto Sans Sinhala', sans-serif;
     line-height: 1.6;
@@ -80,22 +82,45 @@ section {
     border-radius: 5px;
 }
 
+.contact-info, .officer-info {
+    margin-top: 20px;
+    padding: 15px;
+    background: #f9f9f9;
+    border-left: 5px solid #0779e4;
+}
+
 h2 {
     color: #0779e4;
     border-bottom: 2px solid #f4f4f4;
     padding-bottom: 10px;
 }
 
-ul {
+h3 {
+    color: #333;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 5px;
+}
+
+ul, ol {
     list-style: none;
     padding: 0;
 }
 
-ul li {
+ul li, ol li {
     background: #f9f9f9;
-    margin-bottom: 5px;
-    padding: 10px;
+    margin-bottom: 10px;
+    padding: 15px;
     border-left: 5px solid #0779e4;
+}
+
+ol {
+    list-style-type: decimal;
+    padding-left: 20px;
+}
+
+ol li {
+    padding-left: 10px;
+    margin-left: 20px;
 }
 
 .table-container {
