@@ -1,23 +1,32 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Critical: Immediately prevent layout shifts on refresh
+    document.body.classList.remove('page-loading');
+    document.body.style.visibility = 'visible';
+    document.body.style.opacity = '1';
+    document.body.style.transform = 'none';
+    
+    // Detect if this is a page refresh
+    const isRefresh = (performance.navigation && performance.navigation.type === 1) || 
+                     (window.performance && window.performance.navigation && window.performance.navigation.type === 1) ||
+                     document.referrer === window.location.href;
+    
+    if (isRefresh) {
+        document.body.classList.add('refreshing');
+    }
+    
     // Handle font loading to prevent layout shifts
     if (document.fonts) {
         document.fonts.ready.then(() => {
             document.body.classList.add('fonts-loaded');
-            document.body.style.visibility = 'visible';
         });
     } else {
         // Fallback for browsers without font loading API
         setTimeout(() => {
             document.body.classList.add('fonts-loaded');
-            document.body.style.visibility = 'visible';
-        }, 100);
+        }, 50);
     }
     
-    // Prevent layout shift by managing loading state
-    document.body.classList.remove('page-loading');
-    document.body.classList.add('loaded');
-    
-    // Reset any persisted states that could cause alignment issues
+    // Immediately reset any persisted states that could cause alignment issues
     resetPageState();
     
     // Create scroll progress bar
@@ -37,30 +46,49 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Function to reset page state on load/refresh
     function resetPageState() {
-        // Reset mobile menu state
+        // Critical: Force reset mobile menu state immediately
         const navMenu = document.getElementById('nav-menu');
         const hamburger = document.getElementById('hamburger');
         
         if (navMenu && hamburger) {
             navMenu.classList.remove('active');
             hamburger.classList.remove('active');
+            document.body.classList.remove('menu-active');
             document.body.style.overflow = '';
+            
+            // Force reset positioning
+            navMenu.style.transform = 'translateY(-100vh)';
+            navMenu.style.opacity = '0';
+            navMenu.style.visibility = 'hidden';
         }
         
-        // Reset any transform or opacity issues
+        // Reset any transform or opacity issues on elements
         document.querySelectorAll('.objective-card, .function-item, .team-member-card, .contact-card, .officer-card').forEach(el => {
-            el.style.opacity = '';
-            el.style.transform = '';
+            el.style.opacity = '1';
+            el.style.transform = 'none';
+            el.style.transition = 'none';
         });
         
         // Ensure navbar is in correct state
         const navbar = document.querySelector('.navbar');
         if (navbar) {
+            navbar.style.transform = 'none';
+            navbar.style.opacity = '1';
             navbar.classList.remove('scrolled');
             if (window.scrollY > 50) {
                 navbar.classList.add('scrolled');
             }
         }
+        
+        // Reset hero section if it exists
+        const hero = document.querySelector('.hero');
+        if (hero) {
+            hero.style.transform = 'none';
+            hero.style.opacity = '1';
+        }
+        
+        // Force layout reflow
+        document.body.offsetHeight;
     }
     
     // Mobile navigation toggle
@@ -79,11 +107,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Close menu
                 navMenu.classList.remove('active');
                 hamburger.classList.remove('active');
+                document.body.classList.remove('menu-active');
                 document.body.style.overflow = '';
             } else {
                 // Open menu
                 navMenu.classList.add('active');
                 hamburger.classList.add('active');
+                document.body.classList.add('menu-active');
                 document.body.style.overflow = 'hidden';
             }
         });
@@ -118,6 +148,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (window.innerWidth <= 768) {
                     navMenu.classList.remove('active');
                     hamburger.classList.remove('active');
+                    document.body.classList.remove('menu-active');
                     document.body.style.overflow = '';
                 }
             });
@@ -142,6 +173,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!isClickInsideNav && !isClickOnHamburger && navMenu.classList.contains('active')) {
                 navMenu.classList.remove('active');
                 hamburger.classList.remove('active');
+                document.body.classList.remove('menu-active');
                 document.body.style.overflow = '';
             }
         });
@@ -151,6 +183,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (e.key === 'Escape' && navMenu.classList.contains('active')) {
                 navMenu.classList.remove('active');
                 hamburger.classList.remove('active');
+                document.body.classList.remove('menu-active');
                 document.body.style.overflow = '';
             }
         });
@@ -160,6 +193,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (window.innerWidth > 768 && navMenu.classList.contains('active')) {
                 navMenu.classList.remove('active');
                 hamburger.classList.remove('active');
+                document.body.classList.remove('menu-active');
                 document.body.style.overflow = '';
             }
         });
@@ -539,7 +573,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry, index) => {
-            if (entry.isIntersecting) {
+            if (entry.isIntersecting && !isRefresh) {
                 // Only animate if page is not being refreshed
                 const animationDelay = document.body.classList.contains('loaded') ? index * 100 : 0;
                 
@@ -549,23 +583,36 @@ document.addEventListener('DOMContentLoaded', () => {
                     entry.target.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
                 }, animationDelay);
                 observer.unobserve(entry.target);
+            } else if (isRefresh) {
+                // Skip animation on refresh, just ensure visibility
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0) rotateX(0)';
+                entry.target.style.transition = 'none';
+                observer.unobserve(entry.target);
             }
         });
     }, observerOptions);
 
-    // Only set initial animation state if not already visible
+    // Only set initial animation state if not refreshing and not already visible
     cards.forEach(card => {
-        const isVisible = card.offsetParent !== null;
-        if (isVisible && window.scrollY === 0) {
-            // If at top of page and card is visible, don't animate
+        if (isRefresh) {
+            // On refresh, ensure immediate visibility
             card.style.opacity = '1';
             card.style.transform = 'translateY(0) rotateX(0)';
+            card.style.transition = 'none';
         } else {
-            // Set up for animation
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(30px) rotateX(10deg)';
-            card.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
-            observer.observe(card);
+            const isVisible = card.offsetParent !== null;
+            if (isVisible && window.scrollY === 0) {
+                // If at top of page and card is visible, don't animate
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0) rotateX(0)';
+            } else {
+                // Set up for animation
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px) rotateX(10deg)';
+                card.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+                observer.observe(card);
+            }
         }
     });
 
@@ -606,22 +653,39 @@ document.addEventListener('DOMContentLoaded', () => {
     
     images.forEach(img => imageObserver.observe(img));
 
-    // Modern page transition effect with safeguards
-    window.addEventListener('beforeunload', () => {
-        // Only apply transition if not refreshing
-        if (!performance.navigation || performance.navigation.type !== 1) {
+    // Modern page transition effect with safeguards against refresh issues
+    window.addEventListener('beforeunload', (e) => {
+        // Only apply transition if not refreshing and not navigating within same domain
+        const isInternalNavigation = e.target.activeElement && 
+            e.target.activeElement.href && 
+            e.target.activeElement.href.includes(window.location.hostname);
+        
+        if (!isInternalNavigation) {
             document.body.style.opacity = '0.8';
             document.body.style.transform = 'scale(0.98)';
         }
     });
     
-    // Handle page show event (for back/forward navigation)
+    // Critical: Handle page show event (for back/forward navigation and refresh)
     window.addEventListener('pageshow', (event) => {
-        if (event.persisted) {
-            // Page was loaded from cache, reset states
+        // Reset states regardless of cache
+        resetPageState();
+        document.body.style.opacity = '1';
+        document.body.style.transform = 'none';
+        document.body.style.visibility = 'visible';
+        
+        // Remove refreshing class after a brief delay
+        setTimeout(() => {
+            document.body.classList.remove('refreshing');
+            document.body.classList.add('loaded');
+        }, 100);
+    });
+    
+    // Additional safeguard for page visibility changes
+    document.addEventListener('visibilitychange', () => {
+        if (!document.hidden) {
+            // Page became visible, ensure proper state
             resetPageState();
-            document.body.style.opacity = '';
-            document.body.style.transform = '';
         }
     });
 });

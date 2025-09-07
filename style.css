@@ -8,30 +8,85 @@
     box-sizing: border-box;
 }
 
-/* Prevent layout shift during page load */
-body {
-    opacity: 1 !important;
-    transition: none;
+/* Critical - Prevent layout shift during page load/refresh */
+html, body {
+    overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
-/* Ensure elements are visible by default to prevent flash */
+body {
+    opacity: 1 !important;
+    transition: none !important;
+    visibility: visible !important;
+    /* Ensure consistent initial state */
+    transform: none !important;
+}
+
+/* Prevent flash of unstyled content and ensure consistent positioning */
+.navbar {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 1000 !important;
+}
+
+/* Ensure elements maintain their layout on refresh */
 .objective-card, 
 .function-item, 
 .team-member-card, 
 .contact-card, 
 .officer-card {
-    opacity: 1;
-    transform: none;
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
 }
 
-/* Loading state management */
-.page-loading .objective-card, 
-.page-loading .function-item, 
-.page-loading .team-member-card, 
-.page-loading .contact-card, 
-.page-loading .officer-card {
+/* Only apply loading animations if page is not being refreshed */
+body:not(.refreshing) .page-loading .objective-card, 
+body:not(.refreshing) .page-loading .function-item, 
+body:not(.refreshing) .page-loading .team-member-card, 
+body:not(.refreshing) .page-loading .contact-card, 
+body:not(.refreshing) .page-loading .officer-card {
     opacity: 0;
     transform: translateY(30px) rotateX(10deg);
+}
+
+/* Prevent mobile menu state persistence on refresh - ONLY on mobile */
+@media (max-width: 768px) {
+    .nav-menu {
+        position: fixed !important;
+        top: 85px !important;
+        left: 0 !important;
+        right: 0 !important;
+        transform: translateY(-100vh) !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+        flex-direction: column !important;
+        background: rgba(255, 255, 255, 0.98) !important;
+        backdrop-filter: blur(20px) !important;
+        padding: 30px 20px !important;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15) !important;
+        border-radius: 0 0 20px 20px !important;
+        border: none !important;
+        max-height: calc(100vh - 85px) !important;
+        overflow-y: auto !important;
+        gap: 0 !important;
+    }
+    
+    .hamburger {
+        display: flex !important;
+    }
+    
+    .hamburger span {
+        transform: none !important;
+        opacity: 1 !important;
+    }
+    
+    body {
+        overflow-y: auto !important;
+        overflow-x: hidden !important;
+    }
 }
 
 /* Enhanced Modern CSS Variables for better theming */
@@ -105,6 +160,13 @@ body {
     -moz-osx-font-smoothing: grayscale;
     /* Make fonts slightly bolder */
     font-weight: 500;
+    /* Critical: Force visibility and prevent layout shifts */
+    visibility: visible !important;
+    opacity: 1 !important;
+    /* Ensure consistent sizing */
+    min-height: 100vh;
+    /* Lock initial dimensions to prevent shifts */
+    font-size: 16px !important;
 }
 
 /* Fallback font sizing to prevent layout shift */
@@ -130,12 +192,15 @@ body {
     -webkit-backdrop-filter: blur(20px);
     border-bottom: 1px solid rgba(226, 232, 240, 0.5);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 1000 !important;
     transition: all 0.3s ease;
+    /* Prevent layout shift */
+    width: 100% !important;
+    min-height: 85px;
 }
 
 .navbar.scrolled {
@@ -202,6 +267,11 @@ body {
     backdrop-filter: blur(10px);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
     border: 1px solid rgba(226, 232, 240, 0.6);
+    /* Ensure desktop visibility */
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+    position: static !important;
 }
 
 .nav-link {
@@ -320,7 +390,7 @@ body {
     background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
     color: var(--white);
     padding: 120px 0 80px;
-    margin-top: 80px;
+    margin-top: 85px;
     position: relative;
     overflow: hidden;
 }
@@ -422,7 +492,7 @@ body {
 .page-header {
     background: linear-gradient(135deg, var(--gray-200) 0%, var(--gray-100) 100%);
     padding: 50px 0;
-    margin-top: 80px;
+    margin-top: 85px;
     border-bottom: 1px solid var(--gray-300);
 }
 
@@ -1257,46 +1327,89 @@ body {
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
-    /* Reset mobile menu states on page load */
+/* Desktop navbar styles - ensure proper display */
+@media (min-width: 769px) {
+    .navbar {
+        background: rgba(255, 255, 255, 0.95) !important;
+        backdrop-filter: blur(20px) !important;
+        -webkit-backdrop-filter: blur(20px) !important;
+        border-bottom: 1px solid rgba(226, 232, 240, 0.5) !important;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08) !important;
+    }
+    
     .nav-menu {
-        transform: translateY(-100vh);
-        opacity: 0;
-        visibility: hidden;
+        display: flex !important;
+        align-items: center !important;
+        gap: 0.5rem !important;
+        background: rgba(255, 255, 255, 0.9) !important;
+        padding: 8px !important;
+        border-radius: 50px !important;
+        backdrop-filter: blur(10px) !important;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08) !important;
+        border: 1px solid rgba(226, 232, 240, 0.6) !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: none !important;
+        position: static !important;
+        top: auto !important;
+        left: auto !important;
+        right: auto !important;
+        flex-direction: row !important;
+        max-height: none !important;
+        overflow-y: visible !important;
+    }
+    
+    .hamburger {
+        display: none !important;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Critical: Reset mobile menu states on page load/refresh */
+    .nav-menu {
+        transform: translateY(-100vh) !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+        position: fixed !important;
+        top: 85px !important;
+        left: 0 !important;
+        right: 0 !important;
     }
     
     .hamburger span {
-        transform: none;
-        opacity: 1;
-        background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        transform: none !important;
+        opacity: 1 !important;
+        background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)) !important;
     }
     
-    /* Prevent body overflow issues on refresh */
+    /* Critical: Prevent body overflow issues on refresh */
     body {
-        overflow-x: hidden;
-        overflow-y: auto;
+        overflow-x: hidden !important;
+        overflow-y: auto !important;
+        position: relative !important;
     }
     
     .hamburger {
         display: flex;
     }
     
-    .hamburger.active span:nth-child(1) {
+    /* Only apply active states when explicitly activated */
+    body.menu-active .hamburger.active span:nth-child(1) {
         transform: rotate(45deg) translate(8px, 8px);
         background: linear-gradient(135deg, #e53e3e, #d69e2e);
     }
     
-    .hamburger.active span:nth-child(2) {
+    body.menu-active .hamburger.active span:nth-child(2) {
         opacity: 0;
         transform: translateX(20px);
     }
     
-    .hamburger.active span:nth-child(3) {
+    body.menu-active .hamburger.active span:nth-child(3) {
         transform: rotate(-45deg) translate(8px, -8px);
         background: linear-gradient(135deg, #e53e3e, #d69e2e);
     }
     
-    .nav-menu {
+    body.menu-active .nav-menu.active {
         position: fixed;
         top: 85px;
         left: 0;
@@ -1306,21 +1419,15 @@ body {
         flex-direction: column;
         padding: 30px 20px;
         box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
-        transform: translateY(-100vh);
+        transform: translateY(0) !important;
         transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         gap: 0;
-        opacity: 0;
-        visibility: hidden;
+        opacity: 1 !important;
+        visibility: visible !important;
         border-radius: 0 0 20px 20px;
         border: none;
         max-height: calc(100vh - 85px);
         overflow-y: auto;
-    }
-    
-    .nav-menu.active {
-        transform: translateY(0);
-        opacity: 1;
-        visibility: visible;
     }
     
     .nav-link {
