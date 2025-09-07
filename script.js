@@ -201,7 +201,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Language toggle functionality with better state management
     const langToggle = document.getElementById('lang-toggle');
-    let currentLang = localStorage.getItem('language') || 'si';
+    let currentLang = localStorage.getItem('language') || 'en';
 
     // Ensure consistent language state on page load
     if (document.documentElement.lang !== currentLang) {
