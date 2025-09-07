@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="si">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Internal Affairs Unit | North Central Provincial Council</title>
+    <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Sinhala:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* Critical CSS to prevent layout shifts */
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-weight: 500; visibility: hidden; }
+        .fonts-loaded body { visibility: visible; }
+        .page-loading * { transition: none !important; }
+    </style>
+</head>
+<body class="page-loading">
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="./images/Emblem_of_Sri_Lanka_logo.svg.png" alt="Sri Lanka Emblem" class="logo">
+                <div class="nav-brand">
+                    <h1 id="nav-title">අභ්‍යන්තර කටයුතු ඒකකය</h1>
+                    <p id="nav-subtitle">උතුරු මැද පළාත් සභාව</p>
+                </div>
+            </div>
+            
+            <div class="nav-menu" id="nav-menu">
+                <a href="home.html" class="nav-link active" id="nav-home">මුල් පිටුව</a>
+                <a href="objectives.html" class="nav-link" id="nav-objectives">ප්‍රධාන අරමුණු</a>
+                <a href="functions.html" class="nav-link" id="nav-functions">වගකීම් සහ කාර්යයන්</a>
+                <a href="team.html" class="nav-link" id="nav-team">සංයුතිය</a>
+                <button id="lang-toggle" class="lang-btn">Switch to English</button>
+            </div>
+            
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-overlay">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 id="hero-title">අභ්‍යන්තර කටයුතු ඒකකය</h1>
+                    <h2 id="hero-subtitle">උතුරු මැද පළාත් සභාව</h2>
+                    <p id="hero-description">විනිවිද භාවය, වගකීම සහ සුපිළිපන්න භාවය ප්‍රවර්ධනය කරමින් රාජ්‍ය සේවා වැඩිදියුණු කිරීම</p>
+                    <div class="hero-buttons">
+                        <a href="objectives.html" class="btn btn-primary" id="hero-btn1">අරමුණු බලන්න</a>
+                        <a href="functions.html" class="btn btn-secondary" id="hero-btn2">කාර්යයන් බලන්න</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Introduction Section -->
+            <section class="content-section">
+                <div class="section-header">
+                    <h2 id="intro-title">හැඳින්වීම</h2>
+                    <div class="section-divider"></div>
+                </div>
+                <div class="content-grid">
+                    <div class="content-text">
+                        <p id="intro-text">
+                            රාජ්‍ය අංශය තුළ දූෂණය මැඩලීමේ ක්‍රියාවලියේ ප්‍රධාන මුල පිරීමක් ලෙස රාජ්‍ය අංශය පුරා විනිවිද භාවය, වග වීම සහ සුපිළිපන්න භාවය පෝෂණය කරන සංස්කෘතියක් නිර්මාණය කර රජයේ සේවාවන් සියලුම පුරවැසියන්ට ඵලදායි ලෙස සැපයීම සඳහා සියලුම රජයේ ආයතන තුළ අභ්‍යන්තර කටයුතු ඒකක (Internal Affairs Unit - IAU) පිහිටුවීමට තීරණය කර ඇත.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Information -->
+            <section class="content-section">
+                <div class="section-header">
+                    <h2 id="contact-title">සම්බන්ධතා තොරතුරු</h2>
+                    <div class="section-divider"></div>
+                </div>
+                <div class="contact-grid">
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-info">
+                            <h3 id="email-label">විද්‍යුත් තැපෑල</h3>
+                            <p>iaunitncp@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="contact-info">
+                            <h3 id="phone-label">දුරකථන</h3>
+                            <p>025 222 2736</p>
+                        </div>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-fax"></i>
+                        </div>
+                        <div class="contact-info">
+                            <h3 id="fax-label">ෆැක්ස්</h3>
+                            <p>025 222 4914</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Key Officers -->
+            <section class="content-section">
+                <div class="section-header">
+                    <h2 id="officers-title">ප්‍රධාන නිලධාරීන්</h2>
+                    <div class="section-divider"></div>
+                </div>
+                    <div class="officers-grid">
+                    <div class="officer-card">
+                        <div class="officer-icon">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <h3 id="unit-head-title">ඒකක ප්‍රධානි</h3>
+                        <h4 id="unit-head-name">ආර්. එම්. ඩී. පී. පුෂ්ප කුමාරි මිය.</h4>
+                        <p id="unit-head-position">ලේකම්, පළාත් සෞඛ්‍ය අමාත්‍යාංශය</p>
+                        <p id="unit-head-phone"><i class="fas fa-phone"></i> <strong>දුරකථන:</strong> 025 2222175</p>
+                    </div>
+                    <div class="officer-card">
+                        <div class="officer-icon">
+                            <i class="fas fa-user-cog"></i>
+                        </div>
+                        <h3 id="subject-officer-title">විෂය නිලධාරි</h3>
+                        <h4 id="subject-officer-name">එච්. ජී. ටී. එච්. අනුරාධා මිය</h4>
+                        <p id="subject-officer-position">සංවර්ධන නිලධාරි</p>
+                        <p id="subject-officer-phone"><i class="fas fa-phone"></i> <strong>දුරකථන:</strong> 025 2222736</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="./images/Emblem_of_Sri_Lanka_logo.svg.png" alt="Sri Lanka Emblem" class="footer-logo-img">
+                        <div class="footer-brand">
+                            <h3 id="footer-title">අභ්‍යන්තර කටයුතු ඒකකය</h3>
+                            <p id="footer-subtitle">උතුරු මැද පළාත් සභාව</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4 id="footer-nav-title">සැරිසැරීම</h4>
+                    <ul class="footer-links">
+                        <li><a href="home.html" id="footer-home">මුල් පිටුව</a></li>
+                        <li><a href="objectives.html" id="footer-objectives">ප්‍රධාන අරමුණු</a></li>
+                        <li><a href="functions.html" id="footer-functions">වගකීම් සහ කාර්යයන්</a></li>
+                        <li><a href="team.html" id="footer-team">සංයුතිය</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 id="footer-contact-title">සම්බන්ධ වන්න</h4>
+                    <div class="footer-contact">
+                        <p><i class="fas fa-envelope"></i> iaunitncp@gmail.com</p>
+                        <p><i class="fas fa-phone"></i> 025 222 2736</p>
+                        <p><i class="fas fa-fax"></i> 025 222 4914</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p id="footer-copyright">&copy; 2025 අභ්‍යන්තර කටයුතු ඒකකය, උතුරු මැද පළාත් සභාව. සියලුම හිමිකම් ඇවිරිණි.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

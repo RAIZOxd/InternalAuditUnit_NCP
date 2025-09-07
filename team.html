@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="si">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team - Internal Affairs Unit | North Central Provincial Council</title>
+    <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Sinhala:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* Critical CSS to prevent layout shifts */
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-weight: 500; visibility: hidden; }
+        .fonts-loaded body { visibility: visible; }
+        .page-loading * { transition: none !important; }
+    </style>
+</head>
+<body class="page-loading">
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="./images/Emblem_of_Sri_Lanka_logo.svg.png" alt="Sri Lanka Emblem" class="logo">
+                <div class="nav-brand">
+                    <h1 id="nav-title">අභ්‍යන්තර කටයුතු ඒකකය</h1>
+                    <p id="nav-subtitle">උතුරු මැද පළාත් සභාව</p>
+                </div>
+            </div>
+            
+            <div class="nav-menu" id="nav-menu">
+                <a href="home.html" class="nav-link" id="nav-home">මුල් පිටුව</a>
+                <a href="objectives.html" class="nav-link" id="nav-objectives">ප්‍රධාන අරමුණු</a>
+                <a href="functions.html" class="nav-link" id="nav-functions">වගකීම් සහ කාර්යයන්</a>
+                <a href="team.html" class="nav-link active" id="nav-team">සංයුතිය</a>
+                <button id="lang-toggle" class="lang-btn">Switch to English</button>
+            </div>
+            
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="header-content">
+                <h1 id="page-title">සංයුතිය</h1>
+                <nav class="breadcrumb">
+                    <a href="home.html" id="breadcrumb-home">මුල් පිටුව</a>
+                    <span class="breadcrumb-separator">/</span>
+                    <span id="breadcrumb-current">සංයුතිය</span>
+                </nav>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <section class="content-section">
+                <div class="section-header">
+                    <h2 id="team-title">අභ්‍යන්තර කටයුතු ඒකකයේ සංයුතිය</h2>
+                    <div class="section-divider"></div>
+                </div>
+                
+                <!-- Team Members Cards -->
+                <div class="team-grid">
+                    <div class="team-member-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="member-avatar">
+                            <div class="avatar-placeholder">
+                                <i class="fas fa-user-tie"></i>
+                            </div>
+                        </div>
+                        <div class="member-info">
+                            <h3 id="member-1-name">ආර්. එම්. ඩී. පී. පුෂ්ප කුමාරි මිය.</h3>
+                            <p class="member-position" id="member-1-position">ඒකකයේ ප්‍රධානී</p>
+                            <p class="member-designation" id="member-1-designation">ලේකම්, පළාත් සෞඛ්‍ය අමාත්‍යාංශය</p>
+                            <div class="member-contact">
+                                <p class="contact-item">
+                                    <span class="contact-icon"><i class="fas fa-phone"></i></span>
+                                    <span>025 2222175</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="team-member-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="member-avatar">
+                            <div class="avatar-placeholder">
+                                <i class="fas fa-user-cog"></i>
+                            </div>
+                        </div>
+                        <div class="member-info">
+                            <h3 id="member-2-name">ඩබ්.එම්.ගයාන් ඉන්දික මයා</h3>
+                            <p class="member-position" id="member-2-position">සුපිළිපන්න නිලධාරියා</p>
+                            <p class="member-designation" id="member-2-designation">පළාත් ක්‍රීඩා අධ්‍යක්ෂ</p>
+                            <div class="member-contact">
+                                <p class="contact-item">
+                                    <span class="contact-icon"><i class="fas fa-phone"></i></span>
+                                    <span>025 2222736</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Team Table -->
+                <div class="team-table-section">
+                    <h3 id="table-title">සංයුතිය - සාරාංශය</h3>
+                    <div class="table-container">
+                        <table class="team-table">
+                            <thead>
+                                <tr>
+                                    <th id="table-th-position">තනතුර</th>
+                                    <th id="table-th-name">නිලධාරියාගේ නම</th>
+                                    <th id="table-th-designation">අමතර තනතුර</th>
+                                    <th id="table-th-contact">සම්බන්ධතාව</th>
+                                </tr>
+                            </thead>
+                            <tbody id="team-table-body">
+                                <tr>
+                                    <td id="row-1-position">ඒකකයේ ප්‍රධානී</td>
+                                    <td id="row-1-name">ආර්. එම්. ඩී. පී. පුෂ්ප කුමාරි මිය.</td>
+                                    <td id="row-1-designation">ලේකම්, පළාත් සෞඛ්‍ය අමාත්‍යාංශය</td>
+                                    <td id="row-1-contact">025 2222175</td>
+                                </tr>
+                                <tr>
+                                    <td id="row-2-position">සුපිළිපන්න නිලධාරියා</td>
+                                    <td id="row-2-name">ඩබ්.එම්.ගයාන් ඉන්දික මයා</td>
+                                    <td id="row-2-designation">පළාත් ක්‍රීඩා අධ්‍යක්ෂ</td>
+                                    <td id="row-2-contact">025 2222736</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Contact Section -->
+                <div class="contact-section">
+                    <div class="section-header">
+                        <h3 id="contact-section-title">ඒකකය සමඟ සම්බන්ධ වන්න</h3>
+                        <div class="section-divider"></div>
+                    </div>
+                    <div class="contact-cards">
+                        <div class="contact-card">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4 id="email-title">විද්‍යුත් තැපෑල</h4>
+                                <p>iaunitncp@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-card">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4 id="main-phone-title">ප්‍රධාන දුරකථන</h4>
+                                <p>025 222 2736</p>
+                            </div>
+                        </div>
+                        <div class="contact-card">
+                            <div class="contact-icon">
+                                <i class="fas fa-fax"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4 id="fax-title">ෆැක්ස්</h4>
+                                <p>025 222 4914</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Call to Action -->
+            <section class="cta-section">
+                <div class="cta-content">
+                    <h2 id="cta-title">අරමුණු සහ කාර්යයන් දැන ගන්න</h2>
+                    <p id="cta-desc">අභ්‍යන්තර කටයුතු ඒකකයේ ප්‍රධාන අරමුණු සහ විස්තරාත්මක කාර්යයන් පිළිබඳ වැඩි අවබෝධයක් ලබා ගන්න.</p>
+                    <div class="cta-buttons">
+                        <a href="objectives.html" class="btn btn-primary" id="cta-btn-1">අරමුණු බලන්න</a>
+                        <a href="functions.html" class="btn btn-secondary" id="cta-btn-2">කාර්යයන් බලන්න</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="./images/Emblem_of_Sri_Lanka_logo.svg.png" alt="Sri Lanka Emblem" class="footer-logo-img">
+                        <div class="footer-brand">
+                            <h3 id="footer-title">අභ්‍යන්තර කටයුතු ඒකකය</h3>
+                            <p id="footer-subtitle">උතුරු මැද පළාත් සභාව</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4 id="footer-nav-title">සැරිසැරීම</h4>
+                    <ul class="footer-links">
+                        <li><a href="home.html" id="footer-home">මුල් පිටුව</a></li>
+                        <li><a href="objectives.html" id="footer-objectives">ප්‍රධාන අරමුණු</a></li>
+                        <li><a href="functions.html" id="footer-functions">වගකීම් සහ කාර්යයන්</a></li>
+                        <li><a href="team.html" id="footer-team">සංයුතිය</a></li>
+                    </ul>
+                </div>
+                                <div class="footer-section">
+                    <h4 id="footer-contact-title">සම්බන්ධ වන්න</h4>
+                    <div class="footer-contact">
+                        <p><i class="fas fa-envelope"></i> iaunitncp@gmail.com</p>
+                        <p><i class="fas fa-phone"></i> 025 222 2736</p>
+                        <p><i class="fas fa-fax"></i> 025 222 4914</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p id="footer-copyright">&copy; 2025 අභ්‍යන්තර කටයුතු ඒකකය, උතුරු මැද පළාත් සභාව. සියලුම හිමිකම් ඇවිරිණි.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

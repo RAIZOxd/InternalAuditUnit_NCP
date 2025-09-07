@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="si">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions - Internal Affairs Unit | North Central Provincial Council</title>
+    <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Sinhala:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* Critical CSS to prevent layout shifts */
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-weight: 500; visibility: hidden; }
+        .fonts-loaded body { visibility: visible; }
+        .page-loading * { transition: none !important; }
+    </style>
+</head>
+<body class="page-loading">
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="./images/Emblem_of_Sri_Lanka_logo.svg.png" alt="Sri Lanka Emblem" class="logo">
+                <div class="nav-brand">
+                    <h1 id="nav-title">අභ්‍යන්තර කටයුතු ඒකකය</h1>
+                    <p id="nav-subtitle">උතුරු මැද පළාත් සභාව</p>
+                </div>
+            </div>
+            
+            <div class="nav-menu" id="nav-menu">
+                <a href="home.html" class="nav-link" id="nav-home">මුල් පිටුව</a>
+                <a href="objectives.html" class="nav-link" id="nav-objectives">ප්‍රධාන අරමුණු</a>
+                <a href="functions.html" class="nav-link active" id="nav-functions">වගකීම් සහ කාර්යයන්</a>
+                <a href="team.html" class="nav-link" id="nav-team">සංයුතිය</a>
+                <button id="lang-toggle" class="lang-btn">Switch to English</button>
+            </div>
+            
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="header-content">
+                <h1 id="page-title">වගකීම් සහ කාර්යයන්</h1>
+                <nav class="breadcrumb">
+                    <a href="home.html" id="breadcrumb-home">මුල් පිටුව</a>
+                    <span class="breadcrumb-separator">/</span>
+                    <span id="breadcrumb-current">වගකීම් සහ කාර්යයන්</span>
+                </nav>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <section class="content-section">
+                <div class="section-header">
+                    <h2 id="functions-title">අභ්‍යන්තර කටයුතු ඒකකයෙහි වගකීම සහ කාර්යයන්</h2>
+                    <div class="section-divider"></div>
+                </div>
+                
+                <div class="intro-text">
+                    <p id="functions-intro">
+                        ආයතනික සුපිළිපන්න භාවයේ ප්‍රධාන අංග ඉලක්ක කර ගනිමින් ක්‍රියාශීලී, පැහැදිලි සහ කේන්ද්‍රගත දුෂණ විරෝධී ප්‍රයත්නයන් තහවුරු කිරීම සඳහා පහත සඳහන් නිශ්චිත වගකීම් සහ කාර්යයන් අභ්‍යන්තර කටයුතු ඒකකය වෙත පැවරී ඇත.
+                    </p>
+                </div>
+
+                <div class="functions-list">
+                    <div class="function-item" data-aos="fade-up" data-aos-delay="100">
+                        <div class="function-number">01</div>
+                        <div class="function-content">
+                            <h3 id="function-1-title">ක්‍රියා පටිපාටි සමාලෝචනය</h3>
+                            <p id="function-1-desc">ආයතනය තුළ පවතින පද්ධතිමය බාධාවන් (systemic bottlenecks) හඳුනා ගැනීම සඳහා වත්මන් ක්‍රියා පටිපාටි සහ වක්‍ර ලේඛ පරීක්ෂා කිරීම සහ මෙහෙයුම් කාර්යක්ෂමතාව ඉහළ නැංවීම සඳහා ඒවා සරල කිරීම.</p>
+                        </div>
+                    </div>
+
+                    <div class="function-item" data-aos="fade-up" data-aos-delay="200">
+                        <div class="function-number">02</div>
+                        <div class="function-content">
+                            <h3 id="function-2-title">දුෂණ අවදානම් ඇගයීම</h3>
+                            <p id="function-2-desc">දුෂණ අවදානම් ඇගයීම් (Corruption Risk Assessment) සිදු කිරීම මඟින් ආයතනය තුළ දූෂණයට හා සදාචාර විරෝධී හැසිරීම් වලට ගොදුරු විය හැකි ක්ෂේත්‍ර හඳුනා ගැනීම සහ ඉලක්කගත වැළැක්වීමේ පියවර ගැනීම.</p>
+                        </div>
+                    </div>
+
+                    <div class="function-item" data-aos="fade-up" data-aos-delay="300">
+                        <div class="function-number">03</div>
+                        <div class="function-content">
+                            <h3 id="function-3-title">සුපිළිපන්න ක්‍රියාකාරී සැලැස්ම</h3>
+                            <p id="function-3-desc">ආයතනයේ අවශ්‍යතා වලට ගැළපෙන පරිදි සකස් කරන ලද නිෂ්චිත දුෂණ විරෝධී අරමුණු සහ උපාය මාර්ග ඇතුළත් ආයතනික සුපිළිපන්න ක්‍රියාකාරී සැලැස්මක් සකස් කර ක්‍රියාත්මක කිරීම.</p>
+                        </div>
+                    </div>
+
+                    <div class="function-item" data-aos="fade-up" data-aos-delay="400">
+                        <div class="function-number">04</div>
+                        <div class="function-content">
+                            <h3 id="function-4-title">ජාතික උපාය මාර්ග අනුකූලතාව</h3>
+                            <p id="function-4-desc">ජාතික දූෂණ විරෝධී ක්‍රියාකාරී සැලැස්ම සමඟ ආයතනික ප්‍රතිපත්ති සහ භාවිතයන් පෙළගස්වමින් ජාතික දුෂණ විරෝධී උපාය මාර්ග වලට අනුකූල වීම.</p>
+                        </div>
+                    </div>
+
+                    <div class="function-item" data-aos="fade-up" data-aos-delay="500">
+                        <div class="function-number">05</div>
+                        <div class="function-content">
+                            <h3 id="function-5-title">අනුකුලතා සමාලෝචන</h3>
+                            <p id="function-5-desc">2023 අංක 9 දරන දුෂණ විරෝධී පනත ඇතුළු ජාතික හා ජාත්‍යන්තර දුෂණ විරෝධී නීති සමග ආයතනයේ අනුකූලතාව ඇගයීම සඳහා අනුකුලතා සමාලෝචන (Compliance Assessments) සිදු කිරීම සහ වැඩි දියුණු කළ යුතු ක්ෂේත්‍ර හදුනා ගැනීම.</p>
+                        </div>
+                    </div>
+
+                    <div class="function-item" data-aos="fade-up" data-aos-delay="600">
+                        <div class="function-number">06</div>
+                        <div class="function-content">
+                            <h3 id="function-6-title">වත්කම් ප්‍රකාශන සහ ගැටුම් කළමනාකරණය</h3>
+                            <p id="function-6-desc">සියලුම රාජ්‍ය නිලධාරීන් සහ සේවා නියුක්තිකයින් සඳහා වත්කම් ප්‍රකාශන අවශ්‍යතාවලට අනුකූල වීම සහතික කිරීම සහ අල්ලස් හෝ දූෂණ චෝදනා විමර්ශන කොමිෂන් සභා නියෝග සහ 2023 අංක 9 දරන දුෂණ විරෝධී පනතට අනුකූලව බැඳියාවන් අතර ගැටුම් කළමනා කරණය කිරීම.</p>
+                        </div>
+                    </div>
+
+                    <div class="function-item" data-aos="fade-up" data-aos-delay="700">
+                        <div class="function-number">07</div>
+                        <div class="function-content">
+                            <h3 id="function-7-title">පැමිණිලි කළමනාකරණ පද්ධතිය</h3>
+                            <p id="function-7-desc">ආයතනය තුළ දූෂණ සහ සදාචාර විරෝධී හැසිරීම් සම්බන්ධ පැමිණිලි භාර ගැනීම සහ කළමනා කරණය කිරීම සඳහා ආරක්ෂිත පද්ධතියක් ස්ථාපිත කිරීම, එවැනි සියලුම පැමිණිලි සම්බන්ධයෙන් අදාළ නිලධාරීන් හෝ ඒකක විසින් කඩිනමින් කටයුතු කරන බවට සහතික වීම.</p>
+                        </div>
+                    </div>
+
+                    <div class="function-item" data-aos="fade-up" data-aos-delay="800">
+                        <div class="function-number">08</div>
+                        <div class="function-content">
+                            <h3 id="function-8-title">පුරවැසි ප්‍රඥප්තිය</h3>
+                            <p id="function-8-desc">ආයතනය විසින් සපයනු ලබන සේවාවන් විස්තර කෙරෙන පුරවැසි ප්‍රඥප්තියක් සංවර්ධනය කර ප්‍රකාශයට පත් කිරීම.</p>
+                        </div>
+                    </div>
+
+                    <div class="function-item" data-aos="fade-up" data-aos-delay="900">
+                        <div class="function-number">09</div>
+                        <div class="function-content">
+                            <h3 id="function-9-title">සදාචාරාත්මක ප්‍රතිපත්ති</h3>
+                            <p id="function-9-desc">රාජ්‍ය නිලධාරීන් විසින් පිළිපැදිය යුතු ප්‍රමිතිගත ආචාර ධර්ම සංග්‍රහයක් ඇතුළුව, සදාචාරාත්මක පාලනය ප්‍රවර්ධනය කරන ප්‍රතිපත්ති ස්ථාපිත කිරීම සහ බලාත්මක කිරීම.</p>
+                        </div>
+                    </div>
+
+                    <div class="function-item" data-aos="fade-up" data-aos-delay="1000">
+                        <div class="function-number">10</div>
+                        <div class="function-content">
+                            <h3 id="function-10-title">පුහුණුව සහ දැනුවත් කිරීම</h3>
+                            <p id="function-10-desc">දුෂණ විරෝධී මූල ධර්ම වලට කැපවී සිටීමට අභිප්‍රේරණයක් ලෙස කාර්ය මණ්ඩලය පුහුණු කිරීම සහ දැනුවත් කිරීම ඇතුළු අනෙකුත් ක්‍රියාමාර්ග ගැනීම.</p>
+                        </div>
+                    </div>
+
+                    <div class="function-item" data-aos="fade-up" data-aos-delay="1100">
+                        <div class="function-number">11</div>
+                        <div class="function-content">
+                            <h3 id="function-11-title">ජාතික සුපිළිපන්න ඇගයීම</h3>
+                            <p id="function-11-desc">අල්ලස් හෝ දුෂණ චෝදනා විමර්ශන කොමිෂන් සභාව සහ ජාතික දූෂණ විරෝධී රාමුව මඟින් මෙහෙයවනු ලබන සුපිළිපන්න ඇගයීම් ක්‍රියාවලින් සඳහා ආයතනය සහභාගී වන බව සහ ඒ සමඟ පෙළ ගැසෙන බව සහතික කරමින්, ජාතික දූෂණ විරෝධී සුපිළිපන්න ඇගයීම (National Anti-Corruption Integrity Assessment) සඳහා ආයතනික කේන්ද්‍රස්ථානය ලෙස ක්‍රියා කිරීම.</p>
+                        </div>
+                    </div>
+
+                    <div class="function-item" data-aos="fade-up" data-aos-delay="1200">
+                        <div class="function-number">12</div>
+                        <div class="function-content">
+                            <h3 id="function-12-title">කොමිෂන් සභාව සමඟ සම්බන්ධතා</h3>
+                            <p id="function-12-desc">ඒකකයේ රාජකාරි ක්‍රියාත්මක කිරීමේදී අඛණ්ඩ මගපෙන්වීම් සහ සහාය ලබා ගැනීම සඳහා අල්ලස් හෝ දුෂණ චෝදනා විමර්ශන කොමිෂන් සභාව සමඟ සම්බන්ධතා පවත්වා ගැනීම.</p>
+                        </div>
+                    </div>
+
+                    <div class="function-item" data-aos="fade-up" data-aos-delay="1300">
+                        <div class="function-number">13</div>
+                        <div class="function-content">
+                            <h3 id="function-13-title">වාර්තා සකස් කිරීම</h3>
+                            <p id="function-13-desc">අභ්‍යන්තර කටයුතු ඒකකයෙහි ක්‍රියාකාරකම්, දුෂණ විරෝධී මුලපිරීම්වල ප්‍රගතිය, මුහුණ දෙන අභියෝග සහ ඉදිරි ක්‍රියාමාර්ග සඳහා නිර්දේශ සාරාංශගත කරමින් කාලානුරූපී සහ වාර්ෂික වාර්තා සකස් කිරීම.</p>
+                        </div>
+                    </div>
+
+                    <div class="function-item" data-aos="fade-up" data-aos-delay="1400">
+                        <div class="function-number">14</div>
+                        <div class="function-content">
+                            <h3 id="function-14-title">පුද්ගලික අංශය සමඟ සහයෝගීතාව</h3>
+                            <p id="function-14-desc">පුද්ගලික අංශයේ පාර්ශවකරුවන්ගේ සහභාගීත්වයෙන් සුපිළිපන්නතාවය වර්ධනය කිරීම සඳහා වන සැලසුම් සකස් කිරීම හා ක්‍රියාත්මක කිරීම.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Call to Action -->
+            <section class="cta-section">
+                <div class="cta-content">
+                    <h2 id="cta-title">අපගේ කණ්ඩායම දැන ගන්න</h2>
+                    <p id="cta-desc">අභ්‍යන්තර කටයුතු ඒකකයේ සංයුතිය සහ ප්‍රධාන නිලධාරීන් පිළිබඳ තොරතුරු ලබා ගන්න.</p>
+                    <a href="team.html" class="btn btn-primary" id="cta-button">කණ්ඩායම බලන්න</a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="./images/Emblem_of_Sri_Lanka_logo.svg.png" alt="Sri Lanka Emblem" class="footer-logo-img">
+                        <div class="footer-brand">
+                            <h3 id="footer-title">අභ්‍යන්තර කටයුතු ඒකකය</h3>
+                            <p id="footer-subtitle">උතුරු මැද පළාත් සභාව</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4 id="footer-nav-title">සැරිසැරීම</h4>
+                    <ul class="footer-links">
+                        <li><a href="home.html" id="footer-home">මුල් පිටුව</a></li>
+                        <li><a href="objectives.html" id="footer-objectives">ප්‍රධාන අරමුණු</a></li>
+                        <li><a href="functions.html" id="footer-functions">වගකීම් සහ කාර්යයන්</a></li>
+                        <li><a href="team.html" id="footer-team">සංයුතිය</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 id="footer-contact-title">සම්බන්ධ වන්න</h4>
+                    <div class="footer-contact">
+                        <p><i class="fas fa-envelope"></i> iaunitncp@gmail.com</p>
+                        <p><i class="fas fa-phone"></i> 025 222 2736</p>
+                        <p><i class="fas fa-fax"></i> 025 222 4914</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p id="footer-copyright">&copy; 2025 අභ්‍යන්තර කටයුතු ඒකකය, උතුරු මැද පළාත් සභාව. සියලුම හිමිකම් ඇවිරිණි.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
